@@ -44,7 +44,7 @@ class Table extends React.Component{
             document.getElementsByClassName('tableCellComp')[i].style.backgroundColor='white';
         }
        
-        console.log(document.getElementsByClassName('tableCellComp'))
+        //console.log(document.getElementsByClassName('tableCellComp'))
     }
   
     onCellClick=(e)=>{
@@ -61,7 +61,7 @@ class Table extends React.Component{
             player1Data.push(e.target.getAttribute('id'));
             if(player1Data.length >= 3)
             {
-                console.log(player1Data,'player1Data')
+                //console.log(player1Data,'player1Data')
                // playerWinData.forEach((elem,i)=>{
                    for(let i=0;i<playerWinData.length;i++)
                    {
@@ -89,17 +89,17 @@ class Table extends React.Component{
         else if(this.state.player2){
             e.target.classList.add('Zero');
             e.target.style.pointerEvents = 'none';
-            player2Data.push(e.target.getAttribute('data-place'));
+            player2Data.push(e.target.getAttribute('id'));
             if(player2Data.length >= 3)
             {
-                console.log(player2Data,'player2Data')
+                //console.log(player2Data,'player2Data')
                 for(let i=0;i<playerWinData.length;i++)
                    {
-                        console.log(i,'i');
+                        //console.log(i,'i');
                         let is_same = playerWinData[i].every(function(element, index) {
-                            return element == player2Data[index]; 
+                            return player2Data.includes(element); 
                         });
-                        console.log(is_same,'is_same');
+                        //console.log(is_same,'is_same');
                         if(is_same){
                             console.log('Player 2 win',i);
                             winnerBlock = i;
@@ -112,7 +112,7 @@ class Table extends React.Component{
 
         if(winnerBlock){
             playerWinData[winnerBlock].forEach((e,i)=>{  
-                console.log(i,playerWinData[winnerBlock][i]);
+                //console.log(i,playerWinData[winnerBlock][i]);
                  document.getElementById(playerWinData[winnerBlock][i]).style.backgroundColor='yellow';
 
              })
@@ -121,7 +121,7 @@ class Table extends React.Component{
     }
     
     render(){
-      console.log("render",this.state);
+     // console.log("render",this.state);
         return (
         <React.Fragment>
             <div className = {this.state.winner?'mainTable disableTable':'mainTable'}>
