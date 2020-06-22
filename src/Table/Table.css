@@ -6,13 +6,6 @@
 .disableTable{
     pointer-events: none;
 }
-.Cross:before{
-    content:'X'
-}
-
-.Zero:before{
-    content:'O'
-}
 
 .winnerPlayer{
     color: green;
