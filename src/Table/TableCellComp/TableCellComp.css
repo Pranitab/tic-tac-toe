@@ -5,12 +5,19 @@
     border:1px solid black;
     font-size: 75px;
     vertical-align: middle;
+    background-color: #ffffff;
 }
 
 .Cross:before{
-    content:'X'
+    content:'X';
+    pointer-events: none;
 }
 
 .Zero:before{
-    content:'O'
+    content:'O';
+    pointer-events: none;
+}
+
+.winnerBlock{
+    background-color: yellow;
 }
