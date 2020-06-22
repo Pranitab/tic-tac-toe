@@ -5,19 +5,11 @@ class TableCellComp extends React.Component{
     
     
     render(){
-        /*let selectPlayer;
-        console.log("clicked...render",this.props);
-        if(this.props.playerStatus.player1){
-            selectPlayer = 'tableCellComp Cross'
-        }
-        else if(this.props.playerStatus.player2){
-            selectPlayer = 'tableCellComp Zero'
-        }
-        else{
-            selectPlayer = 'tableCellComp'
-        }*/
-      //  console.log(this.props.x,this.props.y,'x','y');
-        return <div className='tableCellComp' onClick={this.props.clickCell} id={this.props.x + this.props.y}></div>
+        
+       let addedClass = (this.props.playerData.tableCell[this.props.x+this.props.y])? this.props.playerData.tableCell[Number(this.props.x+this.props.y)]:'';
+       let winnerClass = (this.props.playerData.winningCell[this.props.x+this.props.y])? this.props.playerData.winningCell[Number(this.props.x+this.props.y)]:'';
+
+        return <div className={'tableCellComp'+addedClass+winnerClass} onClick={(e)=>this.props.clickCell(e)} id={this.props.x + this.props.y}></div>
     }
         
 }
