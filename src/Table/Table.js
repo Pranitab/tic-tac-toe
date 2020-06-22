@@ -95,7 +95,7 @@ class Table extends React.Component{
                     }
             }
         }
-        if(winnerBlock){
+        if(winnerBlock || winnerBlock==0){
             playerWinData[winnerBlock].forEach((e,i)=>{  
                  this.state.winningCell.splice(playerWinData[winnerBlock][i],1,' winnerBlock')
                     this.setState(prevState=>({
